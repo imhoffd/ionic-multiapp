@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "defaultProject": "app",
-  "newProjectRoot": "projects",
+  "defaultProject": "app1",
+  "newProjectRoot": "packages",
   "projects": {
-    "app": {
+    "app1": {
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "packages/app1/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
@@ -14,15 +14,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "www",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "outputPath": "packages/app1/www",
+            "index": "packages/app1/src/index.html",
+            "main": "packages/app1/src/main.ts",
+            "polyfills": "packages/app1/src/polyfills.ts",
+            "tsConfig": "packages/app1/tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/assets",
+                "input": "packages/app1/src/assets",
                 "output": "assets"
               },
               {
@@ -33,10 +33,10 @@
             ],
             "styles": [
               {
-                "input": "src/theme/variables.scss"
+                "input": "packages/app1/src/theme/variables.scss"
               },
               {
-                "input": "src/global.scss"
+                "input": "packages/app1/src/global.scss"
               }
             ],
             "scripts": []
@@ -45,8 +45,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "packages/app1/src/environments/environment.ts",
+                  "with": "packages/app1/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -74,11 +74,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app:build"
+            "browserTarget": "app1:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app:build:production"
+              "browserTarget": "app1:build:production"
             },
             "ci": {
               "progress": false
@@ -88,15 +88,15 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app:build"
+            "browserTarget": "app1:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
+            "main": "packages/app1/src/test.ts",
+            "polyfills": "packages/app1/src/polyfills.ts",
+            "tsConfig": "packages/app1/tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "styles": [],
             "scripts": [],
@@ -135,38 +135,38 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "app:serve"
+            "devServerTarget": "app1:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "app:serve:production"
+              "devServerTarget": "app1:serve:production"
             },
             "ci": {
-              "devServerTarget": "app:serve:ci"
+              "devServerTarget": "app1:serve:ci"
             }
           }
         },
         "ionic-cordova-build": {
           "builder": "@ionic/angular-toolkit:cordova-build",
           "options": {
-            "browserTarget": "app:build"
+            "browserTarget": "app1:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app:build:production"
+              "browserTarget": "app1:build:production"
             }
           }
         },
         "ionic-cordova-serve": {
           "builder": "@ionic/angular-toolkit:cordova-serve",
           "options": {
-            "cordovaBuildTarget": "app:ionic-cordova-build",
-            "devServerTarget": "app:serve"
+            "cordovaBuildTarget": "app1:ionic-cordova-build",
+            "devServerTarget": "app1:serve"
           },
           "configurations": {
             "production": {
-              "cordovaBuildTarget": "app:ionic-cordova-build:production",
-              "devServerTarget": "app:serve:production"
+              "cordovaBuildTarget": "app1:ionic-cordova-build:production",
+              "devServerTarget": "app1:serve:production"
             }
           }
         }
