@@ -2,7 +2,9 @@
   "projects": {
     "app1": {
       "name": "app1",
-      "integrations": {},
+      "integrations": {
+        "cordova": {}
+      },
       "type": "angular",
       "root": "packages/app1"
     }
