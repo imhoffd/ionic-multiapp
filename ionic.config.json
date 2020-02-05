@@ -1,5 +1,10 @@
 {
-  "name": "multiapp",
-  "integrations": {},
-  "type": "angular"
+  "defaultProject": "root-app",
+  "projects": {
+    "root-app": {
+      "name": "root-app",
+      "integrations": {},
+      "type": "angular"
+    }
+  }
 }
