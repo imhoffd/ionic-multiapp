@@ -5,6 +5,12 @@
       "name": "root-app",
       "integrations": {},
       "type": "angular"
+    },
+    "second": {
+      "name": "second",
+      "integrations": {},
+      "type": "angular",
+      "root": "projects/second"
     }
   }
 }
