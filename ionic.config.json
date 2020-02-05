@@ -1,3 +1,10 @@
 {
-  "projects": {}
+  "projects": {
+    "first": {
+      "name": "first",
+      "integrations": {},
+      "type": "angular",
+      "root": "projects/first"
+    }
+  }
 }
