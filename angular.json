@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": ".",
   "projects": {
     "my-ionic-client": {
@@ -48,10 +48,45 @@
             "aot": true,
             "assets": [
               "my-ionic-client/src/favicon.ico",
-              "my-ionic-client/src/assets"
+              "my-ionic-client/src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
             ],
             "styles": [
-              "my-ionic-client/src/styles.css"
+              "my-ionic-client/src/styles.css",
+              {
+                "input": "node_modules/@ionic/angular/css/normalize.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/structure.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/typography.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/core.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/padding.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/float-elements.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/text-alignment.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/text-transformation.css"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/flex-utils.css"
+              },
+              {
+                "input": "my-ionic-client/src/theme/variables.css"
+              }
             ],
             "scripts": []
           },
@@ -101,6 +136,30 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "my-ionic-client:build"
+          }
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "my-ionic-client:ionic-cordova-build",
+            "devServerTarget": "my-ionic-client:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "my-ionic-client:ionic-cordova-build:production",
+              "devServerTarget": "my-ionic-client:serve:production"
+            }
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/angular-toolkit:cordova-build",
+          "options": {
+            "browserTarget": "my-ionic-client:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "my-ionic-client:build:production"
+            }
           }
         }
       }
@@ -206,6 +265,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "my-ionic-client"
 }
