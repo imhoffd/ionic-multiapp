@@ -6,5 +6,6 @@
       "type": "angular",
       "root": "my-ionic-client"
     }
-  }
+  },
+  "defaultProject": "my-ionic-client"
 }
