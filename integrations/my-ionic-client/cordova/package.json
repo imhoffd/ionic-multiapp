@@ -2,7 +2,8 @@
   "name": "my-ionic-client",
   "version": "0.0.0",
   "dependencies": {
-    "cordova-android": "^8.1.0"
+    "cordova-android": "^8.1.0",
+    "cordova-ios": "^5.1.1"
   },
   "devDependencies": {
     "cordova-plugin-device": "^2.0.2",
@@ -24,7 +25,8 @@
       "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
