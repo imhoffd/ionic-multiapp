@@ -1,0 +1,10 @@
+{
+  "projects": {
+    "my-ionic-client": {
+      "name": "my-ionic-client",
+      "integrations": {},
+      "type": "angular",
+      "root": "my-ionic-client"
+    }
+  }
+}
