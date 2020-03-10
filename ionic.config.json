@@ -2,7 +2,11 @@
   "projects": {
     "my-ionic-client": {
       "name": "my-ionic-client",
-      "integrations": {},
+      "integrations": {
+        "cordova": {
+          "root": "integrations/my-ionic-client/cordova"
+        }
+      },
       "type": "angular",
       "root": "my-ionic-client"
     }
